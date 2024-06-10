@@ -15,6 +15,7 @@ header {
     background-image: url('./assets/ninjahead.svg');
     background-repeat: no-repeat;
     background-position: bottom;
+    background-size: 8rem;
     height: 20rem;
 }
 
@@ -51,6 +52,14 @@ main button {
     margin-top: 2rem;
 }
 
+main button.remove-item {
+    margin-top: 0;
+}
+
+main article h2 {
+    font-size: 1.5rem;
+}
+
 main article:nth-child(3n + 1) {
     grid-column-start: 1;
     grid-column-end: span 2;
@@ -66,37 +75,92 @@ main article:nth-child(3n + 3) {
     grid-column-end: span 2;
 }
 
-main article:nth-last-child(-n + 2) {
+main article:nth-last-of-type(-n + 2) {
     background-color: #ffffff;
     color: black;
 }
 
-main article:nth-last-child(-n + 2) > * {
+main article:nth-last-of-type(-n + 2) > * {
     margin-left: 1rem;
     margin-right: 1rem;
 }
 
-main article:nth-last-child(-n + 2) > img {
+main article:nth-last-of-type(-n + 2) > img {
     margin: 0;
 }
 
-main article:nth-last-child(-n + 2) > button {
+main article:nth-last-of-type(-n + 2) > button {
     padding: 1rem;
     margin-bottom: 1rem;
 }
 
-main article:nth-last-child(2) {
+main article:nth-last-of-type(2) {
     grid-column-start: 1;
     grid-column-end: span 3;
 }
 
-main article:nth-last-child(1) {
+main article:nth-last-of-type(1) {
     grid-column-start: 4;
     grid-column-end: span 3;
 }
 
-main h2 {
-    font-size: 1.4rem;
+main > h2 {
+    grid-column-start: 1;
+    grid-column-end: span 6;
+    font-size: 2rem;
+    margin-bottom: -3rem;
+    margin-top: 2rem;
+}
+
+main > table {
+    grid-column-start: 1;
+    grid-column-end: span 6;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: normal;
+    border-collapse: collapse;
+}
+
+main > table thead {
+    background-color: rgb(59, 0, 0);
+    font-size: 0.8rem;
+}
+
+main > table thead th{
+    padding: 0.2em 0;
+}
+
+main > table thead th:nth-child(1){
+    width: 50%;
+}
+
+main > table thead th:nth-child(3){
+    width: 8%;
+}
+
+main > table tbody td {
+    padding: 0.5rem 0;
+}
+
+main > table tbody tr:last-child td {
+    padding-bottom: 1rem;
+}
+
+main > table tfoot {
+    border-top: 1px solid white;
+    font-weight: bold;
+}
+
+main > table tfoot th {
+    padding: 1rem 0;
+}
+
+main > button {
+    grid-column-start: 5;
+    grid-column-end: span 2;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 0;
 }
 
 img {
