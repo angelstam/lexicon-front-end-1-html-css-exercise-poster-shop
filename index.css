@@ -1,5 +1,6 @@
 :root {
-    --grid-template-columns: 15rem 15rem 15rem;
+    --grid-template-columns: 7.5rem 7.5rem 7.5rem 7.5rem 7.5rem 7.5rem;
+    --footer-grid-template-columns: 15rem 15rem 15rem;
 }
 
 body {
@@ -50,12 +51,56 @@ main button {
     margin-top: 2rem;
 }
 
+main article:nth-child(3n + 1) {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+}
+
+main article:nth-child(3n + 2) {
+    grid-column-start: 3;
+    grid-column-end: span 2;
+}
+
+main article:nth-child(3n + 3) {
+    grid-column-start: 5;
+    grid-column-end: span 2;
+}
+
+main article:nth-last-child(-n + 2) {
+    background-color: #ffffff;
+    color: black;
+}
+
+main article:nth-last-child(-n + 2) > * {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+main article:nth-last-child(-n + 2) > img {
+    margin: 0;
+}
+
+main article:nth-last-child(-n + 2) > button {
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+main article:nth-last-child(2) {
+    grid-column-start: 1;
+    grid-column-end: span 3;
+}
+
+main article:nth-last-child(1) {
+    grid-column-start: 4;
+    grid-column-end: span 3;
+}
+
 main h2 {
     font-size: 1.4rem;
 }
 
 img {
-    width: 15rem;
+    width: 100%;
 }
 
 footer {
@@ -63,10 +108,11 @@ footer {
     background-color: rgb(51, 51, 51);
     color: white;
     display: grid;
-    grid-template-columns: var(--grid-template-columns);
+    grid-template-columns: var(--footer-grid-template-columns);
     justify-content: center;
     gap: 1rem;
     padding: 1rem auto;
+    margin-top: 1rem;
 }
 
 footer img {
